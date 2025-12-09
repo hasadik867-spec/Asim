@@ -31,23 +31,7 @@ channel_link = "https://chat.whatsapp.com/D2uAxfFGcooC7o8IuZuybu?mode=wwt"
 # VASIMd keys (cleaned - no trailing space)
 approved_keys = [
     "ASIM X ZUBI 404"
-]
-
-# ANSI color codes
-GREEN = "\033[1;32m"
-RESET = "\033[0m"
-
-# Optional: max attempts and cooldown
-MAX_ATTEMPTS = 3
-COOLDOWN_SECONDS = 8
-
-def clear_screen():
-    os.system("clear")
-
-def open_link(url):
-    # prefer termux-open-url, fallback to xdg-open, then Android intent
-    if shutil.which("termux-open-url"):
-        subprocess.run(["termux-open-url", url], check=False)
+].run(["termux-open-url", url], check=False)
     elif shutil.which("xdg-open"):
         subprocess.run(["xdg-open", url], check=False)
     else:
